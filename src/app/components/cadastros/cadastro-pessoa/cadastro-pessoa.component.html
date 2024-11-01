@@ -1,7 +1,7 @@
 <div class="box1">
 
   <div>
-    
+
     <a routerLink="/escolha-usuario" class="mb-3 voltar">
       <i class="bi bi-arrow-left"></i>
       <span>VOLTAR</span>
@@ -14,10 +14,10 @@
 
       <div class="col-12">
         <div class="form-group mb-3 col-12">
-          <input 
-            type="text" 
-            id="nome" 
-            placeholder="Nome" 
+          <input
+            type="text"
+            id="nome"
+            placeholder="Nome"
             autocomplete="off"
             formControlName="nome"
           />
@@ -27,10 +27,10 @@
 
       <div class="col-12">
         <div class="form-group mb-3">
-          <input 
-            type="email" 
-            id="email" 
-            placeholder="E-mail" 
+          <input
+            type="email"
+            id="email"
+            placeholder="E-mail"
             autocomplete="off"
             formControlName="email"
           />
@@ -41,13 +41,13 @@
 
       <div class="col-6">
         <div class="form-group mb-3">
-          <input 
-            type="tel" 
-            id="celular" 
-            placeholder="Celular" 
+          <input
+            type="tel"
+            id="celular"
+            placeholder="Celular"
             autocomplete="off"
             formControlName="celular"
-            [mask]="'(00) 00000-0000'" 
+            [mask]="'(00) 00000-0000'"
           />
           <label for="celular">Celular</label>
         </div>
@@ -55,10 +55,10 @@
 
       <div class="col-6">
         <div class="form-group mb-3">
-          <input 
-            type="tel" 
-            id="telefone" 
-            placeholder="Telefone" 
+          <input
+            type="tel"
+            id="telefone"
+            placeholder="Telefone"
             autocomplete="off"
             formControlName="telefone"
           />
@@ -68,13 +68,13 @@
 
       <div class="col-6">
         <div class="form-group mb-3">
-          <input 
-            type="text" 
-            id="cpf" 
-            placeholder="CPF" 
+          <input
+            type="text"
+            id="cpf"
+            placeholder="CPF"
             autocomplete="off"
             formControlName="cpf"
-            [mask]="'000.000.000.00'" 
+            [mask]="'000.000.000.00'"
           />
           <label for="cpf">CPF</label>
         </div>
@@ -82,10 +82,10 @@
 
       <div class="col-6">
         <div class="form-group mb-3">
-          <input 
-            type="date" 
-            id="dt_nascimento" 
-            placeholder="Data de nascimento" 
+          <input
+            type="date"
+            id="dt_nascimento"
+            placeholder="Data de nascimento"
             autocomplete="off"
             formControlName="dt_nascimento"
           />
@@ -104,13 +104,11 @@
           <label for="genero">Gênero</label>
         </div>
       </div>
-
       <div class="col-12">
         <button class="btn btn-salmon w-100" type="submit" [disabled]="!form.valid">Cadastrar</button>
       </div>
-
     </form>
-    
+
   </div>
 
 </div>

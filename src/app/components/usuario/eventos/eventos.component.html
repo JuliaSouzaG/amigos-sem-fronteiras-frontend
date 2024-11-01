@@ -1,0 +1,26 @@
+<div class="d-flex justify-content-center align-items-center box">
+
+  @for(e of eventos; track e.nome) {
+
+  <mat-card appearance="outlined" class="m-2">
+    <mat-card-content>
+      <h3>{{ e.nome }}</h3>
+      Data: {{ e.data }} <br>
+      Oferecido por: {{e.instituicao_org.nome}} <br> <br>
+      <b>Endereço:</b><br>
+      Bairro: {{e.local.bairro}} <br>
+      Rua: {{e.local.rua}} <br><br>
+      <hr>
+      <div class="mb-2 text-center">
+        Inscreva-se como:
+      </div>
+      <div class="d-flex align-items-center justify-content-center">
+        <button mat-raised-button class="me-2">Voluntário</button>
+        <button mat-raised-button>Beneficiário</button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  }
+
+</div>

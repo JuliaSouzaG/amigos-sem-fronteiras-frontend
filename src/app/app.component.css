@@ -19,3 +19,11 @@ main {
   --bs-btn-disabled-bg: #ed8074;
   --bs-btn-disabled-border-color: #ed8074;
 }
+
+nav {
+  border-bottom: solid 1px rgb(204, 204, 204);
+}
+
+.nav-link {
+  color: #ed8074;
+}

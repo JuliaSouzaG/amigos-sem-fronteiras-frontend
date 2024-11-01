@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
+import {MatButtonModule} from '@angular/material/button';
 
 @Component({
   selector: 'app-cadastro-pessoa',
@@ -13,7 +14,8 @@ import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
     NgxMaskPipe,
     FormsModule,
     ReactiveFormsModule,
-    NgIf
+    NgIf,
+    MatButtonModule
   ],
   templateUrl: './cadastro-pessoa.component.html',
   styleUrl: './cadastro-pessoa.component.css',
@@ -41,7 +43,7 @@ export class CadastroPessoaComponent implements OnInit {
     if(this.form.valid) {
       alert('Formulário preenchido corretamente');
       this.form.reset();
-    } 
+    }
   }
 
 }
