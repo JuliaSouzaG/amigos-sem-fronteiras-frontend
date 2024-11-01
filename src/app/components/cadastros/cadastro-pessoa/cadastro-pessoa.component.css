@@ -1,0 +1,113 @@
+.box {
+  width: 500px;
+  border-radius: 7px;
+}
+
+.box1 {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+:root {
+  --bg: #2c2537;
+  --text: #e1e1e1;
+  --accent: gold;
+}
+
+.form-group {
+  --pad: .75rem;
+  position: relative;
+}
+
+input, select {
+  padding: var(--pad);
+  border-radius: 8px;
+  background-color: var(--bg);
+  border: 1px solid #7a7a7a;
+  color: inherit;
+  width: 100%;
+  outline: none;
+}
+
+label {
+  position: absolute;
+  left: var(--pad);
+  top: var(--pad);
+  background-color: white;
+  padding-inline: .3em;
+  transition: transform 200ms;
+  pointer-events: none;
+  transform-origin: left;
+  translate: -.3em;
+}
+
+input::placeholder {
+  opacity: 0;
+}
+
+select::placeholder {
+  opacity: 0;
+}
+
+input:focus + label,
+input:not(:placeholder-shown) + label {
+  transform: translateY(calc(-50% - var(--pad))) scale(.8);
+  color: #4400b0;
+}
+
+input:focus {
+  border: 1px solid #4400b0;
+}
+
+select:focus + label,
+select:not(:placeholder-shown) + label {
+  transform: translateY(calc(-50% - var(--pad))) scale(.8);
+  color: #4400b0;
+}
+
+select:focus {
+  border: 1px solid #4400b0;
+}
+
+.btn-salmon {
+  font-weight: 500;
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #ed8074;
+  --bs-btn-border-color: #ed8074;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #de695c;
+  --bs-btn-hover-border-color: #de695c;
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #de695c;
+  --bs-btn-active-border-color: #de695c;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #ed8074;
+  --bs-btn-disabled-border-color: #ed8074;
+}
+
+i {
+  font-size: 20px;
+}
+
+.voltar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 84px;
+  color: #dc5e4f;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.voltar:hover {
+  color: #4400b0;
+}
+
+.error-msg {
+  font-size: 13px;
+  color: rgb(200, 0, 0);
+}

@@ -1,0 +1,76 @@
+<div class="box1">
+
+    <div>
+      
+      <a routerLink="/escolha-usuario" class="mb-3 voltar">
+        <i class="bi bi-arrow-left"></i>
+        <span>VOLTAR</span>
+      </a>
+  
+      <form [formGroup]="form" (ngSubmit)="onSubmit()" class="box row">
+  
+        <h4 class="mb-2">Cadastre-se</h4>
+        <span class="mb-3">Todos os campos são obrigatórios. O botão de envio será habilitado quando todos os campos forem preenchidos corretamente.</span>
+  
+        <div class="col-12">
+          <div class="form-group mb-3 col-12">
+            <input 
+              type="text" 
+              id="nome" 
+              placeholder="Nome" 
+              autocomplete="off"
+              formControlName="nome"
+            />
+            <label for="nome">Nome</label>
+          </div>
+        </div>
+  
+        <div class="col-12">
+          <div class="form-group mb-3">
+            <input 
+              type="email" 
+              id="email" 
+              placeholder="E-mail" 
+              autocomplete="off"
+              formControlName="email"
+            />
+            <label for="email">E-mail</label>
+          <div *ngIf="form.get('email')?.errors?.['email']" class="error-msg">Insira um e-mail válido.</div>
+        </div>
+        </div>
+  
+        <div class="col-6">
+          <div class="form-group mb-3">
+            <input 
+              type="tel" 
+              id="telefone" 
+              placeholder="Telefone" 
+              autocomplete="off"
+              formControlName="telefone"
+            />
+            <label for="telefone">Telefone</label>
+          </div>
+        </div>
+
+        <div class="col-6">
+          <div class="form-group mb-3">
+            <input 
+              type="" 
+              id="observacao" 
+              placeholder="Observação" 
+              autocomplete="off"
+              formControlName="observacao"
+            />
+            <label for="observacao">Observação</label>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <button class="btn btn-salmon w-100" type="submit" [disabled]="!form.valid">Cadastrar</button>
+        </div>
+  
+      </form>
+      
+    </div>
+  
+  </div>
