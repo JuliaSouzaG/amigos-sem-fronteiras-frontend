@@ -1,26 +1,43 @@
 <div class="d-flex justify-content-center align-items-center box">
 
-  @for(e of eventos; track e.nome) {
+  <div class="tudao">
 
-  <mat-card appearance="outlined" class="m-2">
-    <mat-card-content>
-      <h3>{{ e.nome }}</h3>
-      Data: {{ e.data }} <br>
-      Oferecido por: {{e.instituicao_org.nome}} <br> <br>
-      <b>Endereço:</b><br>
-      Bairro: {{e.local.bairro}} <br>
-      Rua: {{e.local.rua}} <br><br>
-      <hr>
-      <div class="mb-2 text-center">
-        Inscreva-se como:
-      </div>
-      <div class="d-flex align-items-center justify-content-center">
-        <button mat-raised-button class="me-2">Voluntário</button>
-        <button mat-raised-button>Beneficiário</button>
-      </div>
-    </mat-card-content>
-  </mat-card>
+    <div class="m-4">
+      <input type="search" class="form-control w-100" placeholder="Buscar">
+    </div>
 
-  }
+    <div class="cards flex-wrap">
+
+      @for(e of eventos; track e.nome) {
+
+      <mat-card appearance="outlined" class="m-2 card">
+        <mat-card-content>
+          <h3>{{ e.nome }}</h3>
+          <div class="mb-2">
+            <span class="end">Institução Responsável:</span> {{ e.instituicao_org.nome }}
+          </div>
+          <div class="d-flex align-items-center mb-2">
+            <mat-icon class="me-1">date_range</mat-icon> {{ e.data }}
+          </div>
+          <div class="d-flex align-items-center mb-1">
+            <mat-icon class="me-1">location_on</mat-icon>
+            <div>{{ e.endereco }}</div>
+          </div>
+          <hr>
+          <div class="mb-2 text-center">
+            Inscreva-se como:
+          </div>
+          <div class="d-flex align-items-center justify-content-center">
+            <button mat-raised-button class="me-2">Voluntário</button>
+            <button mat-raised-button>Beneficiário</button>
+          </div>
+        </mat-card-content>
+      </mat-card>
+
+      }
+
+    </div>
+
+  </div>
 
 </div>

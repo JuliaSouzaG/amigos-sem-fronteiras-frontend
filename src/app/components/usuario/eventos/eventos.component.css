@@ -5,3 +5,32 @@ mat-card {
 .box {
   height: 100%;
 }
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.09);
+}
+
+.card:hover{
+  border-color: darksalmon;
+  cursor: pointer;
+  transform: scale(1.02);
+  transition-duration: 0.4s;
+}
+
+h3 {
+  font-weight: 500;
+}
+
+.end {
+  font-weight: 500;
+}
+
+.cards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tudao {
+  width: 80%;
+}
