@@ -1,0 +1,32 @@
+.box {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar {
+    border: solid 1px rgb(135, 135, 135);
+    border-radius: 3px;
+    background-color: white;
+    padding: 15px;
+    height: 500px;
+    width: 250px;
+}
+
+.info {
+    border: solid 1px rgb(135, 135, 135);
+    border-radius: 3px;
+    background-color: white;
+    padding: 15px;
+    height: 500px;
+    width: 600px;
+}
+
+a {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    width: 100%;
+    text-decoration: none;
+}
