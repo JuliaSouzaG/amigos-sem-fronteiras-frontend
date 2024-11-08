@@ -8,6 +8,8 @@ import { EventosComponent } from './components/usuario/eventos/eventos.component
 import { MeusEspacosComponent } from './components/usuario/meus-espacos/meus-espacos.component';
 import { MeusEventosComponent } from './components/usuario/meus-eventos/meus-eventos.component';
 import { MeuPerfilComponent } from './components/usuario/meu-perfil/meu-perfil.component';
+import { QuemSomosComponent } from './components/quem-somos/quem-somos.component';
+import { LoginComponent } from './components/login/login.component';
 
 export const routes: Routes = [
   { path: 'cadastro-pessoa', component: CadastroPessoaComponent },
@@ -21,6 +23,8 @@ export const routes: Routes = [
     ]
    },
   { path: 'eventos', component: EventosComponent },
+  { path: 'quem-somos', component: QuemSomosComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
   { path: '', pathMatch: 'full', redirectTo: '/home' },
   { path: '**', pathMatch: 'full', redirectTo: '/home' },
