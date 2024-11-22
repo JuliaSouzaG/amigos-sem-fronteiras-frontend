@@ -16,8 +16,17 @@ mat-card {
   transition-duration: 0.4s;
 }
 
+.margin {
+  margin: 5px;
+}
+
+
 h3 {
   font-weight: 500;
+}
+
+input {
+  width: 400px;
 }
 
 .end {
@@ -27,10 +36,18 @@ h3 {
 .cards {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .tudao {
   display: flex;
   justify-content: end;
+}
+
+#descricao {
+  text-align: justify;
+}
+
+mat-icon {
+  color: darksalmon;
 }

@@ -1,43 +1,53 @@
-<div class="d-flex justify-content-center align-items-center">
+<div class="container mt-4">
   <div>
-    <div class="d-flex justify-content-end w-100 mt-3">
-      <input
-        type="search"
-        class="form-control me-2 mb-2"
-        placeholder="Buscar"
-      />
-    </div>
-    <div class="cards flex-wrap w-100">
-      @for(e of espacos; track e.nome) {
-
-      <mat-card appearance="outlined" class="m-1 card">
-        <img
-          mat-card-image
-          src="../../../../assets/img/fatese-centro.jpg"
-          alt=""
+    <div class="d-flex flex-wrap align-items-center justify-content-between margin">
+      <div style="width: 200px;">
+        <h1>Espaços</h1>
+        <p>Foram encontrados 4 itens</p>
+      </div>
+      <div>
+        <input
+          type="search"
+          class="form-control mb-2"
+          placeholder="Busque por palavras-chaves"
         />
-        <mat-card-header>
-          <mat-card-title>{{ e.nome }}</mat-card-title>
-          <mat-card-subtitle>{{ e.org.nome }}</mat-card-subtitle>
-        </mat-card-header>
-        <mat-card-content>
-          <div class="d-flex align-items-center mb-2 mt-2">
-            <mat-icon class="me-1">group</mat-icon> {{ e.capacidade }}
-          </div>
-          <div class="d-flex align-items-center mb-2">
-            <mat-icon class="me-1">location_on</mat-icon>
-            <div>{{ e.org.endereco }}</div>
-          </div>
-        </mat-card-content>
-        <mat-card-actions>
-          <div class="d-flex align-items-center justify-content-center">
-            <button mat-raised-button class="col-12" (click)="openCadDialog(e)">
-              Reservar
-            </button>
-          </div>
-        </mat-card-actions>
-      </mat-card>
-      }
+      </div>
+    </div>
+    <div>
+      <div class="cards flex-wrap">
+        @for(e of espacos; track e.nome) {
+
+        <mat-card appearance="outlined" class="card margin">
+          <img
+            mat-card-image
+            [src]=e.image
+            alt=""
+          />
+          <mat-card-header>
+            <mat-card-title>{{ e.nome }}</mat-card-title>
+            <mat-card-subtitle>{{ e.org.nome }}</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <div class="d-flex align-items-center mb-2 mt-2">
+              <mat-icon class="me-1">group</mat-icon> {{ e.capacidade }}
+            </div>
+            <div class="d-flex align-items-center mb-2">
+              <div>
+                <mat-icon class="me-1">location_on</mat-icon>
+              </div>
+              <div>{{ e.org.endereco }}</div>
+            </div>
+          </mat-card-content>
+          <mat-card-actions>
+            <div class="d-flex align-items-center justify-content-center">
+              <button mat-raised-button class="col-12" (click)="openCadDialog(e)">
+                Reservar
+              </button>
+            </div>
+          </mat-card-actions>
+        </mat-card>
+        }
+      </div>
     </div>
   </div>
 </div>

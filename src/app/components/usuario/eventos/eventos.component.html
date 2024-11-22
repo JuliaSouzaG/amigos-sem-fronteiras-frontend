@@ -1,33 +1,55 @@
-<div class="d-flex flex-column">
+<div class="container mt-4">
 
-  <div class="mt-4 mb-4">
-    <input type="search" class="form-control float-end" placeholder="Buscar" style="width: 400px;">
+  <div>
+    <div class="d-flex flex-wrap align-items-center justify-content-between margin">
+      <div style="width: 200px;">
+        <h1>Eventos</h1>
+        <p>Foram encontrados 8 itens.</p>
+      </div>
+      <div>
+        <input
+          type="search"
+          class="form-control mb-2"
+          placeholder="Busque por palavras-chaves"
+        />
+      </div>
+    </div>
+
+      <div class="cards flex-wrap">
+        @for(e of eventos; track e.nome) {
+
+        <mat-card appearance="outlined" class="card margin">
+
+          <img
+            mat-card-image
+            [src]="e.imagem"
+            alt=""
+          />
+          <mat-card-header>
+            <mat-card-title>{{ e.nome }}</mat-card-title>
+            <mat-card-subtitle>{{ e.instituicao_org.nome }}</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <div class="my-2">
+              <p id="descricao">{{e.descricao}}</p>
+            </div>
+            <div class="d-flex align-items-center mb-2 mt-2">
+              <mat-icon class="me-1">date_range</mat-icon> {{ e.data }}
+            </div>
+            <div class="d-flex align-items-center mb-1">
+              <div><mat-icon class="me-1">location_on</mat-icon></div>
+              <div>{{ e.endereco }}</div>
+            </div>
+            <hr>
+            <div class="d-flex align-items-center justify-content-center">
+              <button mat-raised-button class="col-12" (click)="openCadDialog(e)">Inscreva-se</button>
+            </div>
+          </mat-card-content>
+        </mat-card>
+
+        }
+
+      </div>
   </div>
 
-    <div class="cards flex-wrap">
-      @for(e of eventos; track e.nome) {
-
-      <mat-card appearance="outlined" class="m-2 card">
-        <mat-card-content>
-          <h3>{{ e.nome }}</h3>
-          <div class="mb-2">
-            <span class="end">Institução Responsável:</span> {{ e.instituicao_org.nome }}
-          </div>
-          <div class="d-flex align-items-center mb-2">
-            <mat-icon class="me-1">date_range</mat-icon> {{ e.data }}
-          </div>
-          <div class="d-flex align-items-center mb-1">
-            <mat-icon class="me-1">location_on</mat-icon>
-            <div>{{ e.endereco }}</div>
-          </div>
-          <hr>
-          <div class="d-flex align-items-center justify-content-center">
-            <button mat-raised-button class="col-12" (click)="openCadDialog(e)">Inscreva-se</button>
-          </div>
-        </mat-card-content>
-      </mat-card>
-
-      }
-
-    </div>
 </div>

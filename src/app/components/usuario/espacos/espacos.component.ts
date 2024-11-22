@@ -14,8 +14,8 @@ import {MatInputModule} from '@angular/material/input';
   standalone: true,
   imports: [
     MatCardModule,
-    CommonModule, 
-    MatButtonModule, 
+    CommonModule,
+    MatButtonModule,
     MatIconModule,
     MatDialogModule,
     MatSidenavModule,
@@ -36,39 +36,43 @@ export class EspacosComponent {
       disableClose: true
     });
   }
-  
+
   espacos = [
     {
       nome: 'Laboratório de Informática',
-      capacidade: '40 pessoas',
+      capacidade: 40,
       org: {
         nome: 'Faculdade de Tecnologia Senac',
         endereco: 'Rua 10 de julho, Centro',
       },
+      image: '../../../../assets/img/fatese-centro.jpg'
     },
     {
-      nome: 'Laboratório de Informática',
-      capacidade: '40 pessoas',
+      nome: 'Ginásio poliesportivo',
+      capacidade: 200,
       org: {
-        nome: 'Faculdade de Tecnologia Senac',
-        endereco: 'Rua 10 de julho, Centro',
+        nome: 'Escola Municipal Charles Garcia',
+        endereco: 'R. Alfredo Monteiro Lima, 66-124 - Santa Rita de Cassia',
       },
+      image: '../../../../assets/img/ginasio-charles-garcia.jpeg'
     },
     {
-      nome: 'Laboratório de Informática',
-      capacidade: '40 pessoas',
+      nome: 'Laboratório Maker',
+      capacidade: 15,
       org: {
-        nome: 'Faculdade de Tecnologia Senac',
-        endereco: 'Rua 10 de julho, Centro',
+        nome: 'Instituto Bejamin Constant',
+        endereco: 'Av. Ramos Ferreira, 991 - Centro, Manaus',
       },
+      image: '../../../../assets/img/espaco-maker.jpg'
     },
     {
-      nome: 'Laboratório de Informática',
-      capacidade: '40 pessoas',
+      nome: 'Laboratório Ciências',
+      capacidade: 30,
       org: {
-        nome: 'Faculdade de Tecnologia Senac',
-        endereco: 'Rua 10 de julho, Centro',
+        nome: 'Colégio La Salle',
+        endereco: 'Av. Central, Área Especial 11 Núcleo Bandeirante - DF',
       },
+      image: '../../../../assets/img/laboratorio-lasalle.jfif'
     }
   ];
 }

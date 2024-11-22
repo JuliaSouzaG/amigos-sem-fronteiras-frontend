@@ -1,25 +1,53 @@
 <nav class="navbar">
 
-  <div class="container-fluid">
+  <div class="container-fluid margin">
 
     <a class="navbar-brand" routerLink="/home"><img src="../assets/logo.svg" alt="Amigos sem fronteiras" /></a>
 
-    <ul class="nav">
+    <ul class="nav" *ngIf="
+    router.url !== '/espacos' &&
+    router.url !== '/conta/meus-espacos' &&
+    router.url !== '/conta/meus-eventos' &&
+    router.url !== '/conta/meu-perfil'">
 
       <li class="nav-item">
+        <a routerLink="/home" class="nav-link" routerLinkActive="selected">Inicio</a>
+      </li>
+
+      <!-- <li class="nav-item">
         <a routerLink="/quem-somos" class="nav-link">Quem somos</a>
-      </li>
-      
+      </li> -->
+
       <li class="nav-item">
-        <a routerLink="/eventos" class="nav-link">Eventos</a>
+        <a routerLink="/eventos" class="nav-link" routerLinkActive="selected">Eventos</a>
       </li>
-      
+
       <li class="nav-item">
-        <a routerLink="/cadastre-se" class="nav-link">Cadastre-se</a>
+        <a routerLink="/cadastre-se" class="nav-link" routerLinkActive="selected">Cadastre-se</a>
       </li>
 
       <li class="nav-item">
         <a routerLink="/login" class="btn btn-salmon" type="submit">Login</a>
+      </li>
+
+    </ul>
+
+    <ul class="nav" *ngIf="router.url === '/espacos' ||
+    router.url === '/eventos' ||
+    router.url === '/conta/meus-eventos' ||
+    router.url === '/conta/meus-espacos' ||
+    router.url === '/conta/meu-perfil'">
+
+      <li class="nav-item">
+        <a routerLink="/eventos" class="nav-link" routerLinkActive="selected">Eventos</a>
+      </li>
+
+      <li class="nav-item">
+        <a routerLink="/espacos" class="nav-link" routerLinkActive="selected">Espaços</a>
+      </li>
+
+      <li class="nav-item">
+        <a routerLink="/conta/meu-perfil" class="btn btn-salmon" type="submit"><i class="bi bi-person-fill"></i> Minha Conta</a>
       </li>
 
     </ul>
