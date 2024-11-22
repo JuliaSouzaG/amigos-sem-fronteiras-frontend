@@ -1,1 +1,33 @@
-<p>meus-eventos works!</p>
+<div class="header p-3">
+    <h2>Meus Eventos</h2>
+    <button id="create-btn" (click)="openCadDialog()" hidden>
+      <mat-icon>add_circle_outline</mat-icon>
+    </button>
+  </div>
+  @for (e of meusEventos; track e.nome) {
+  <mat-card class="example-card mb-2" appearance="outlined">
+    <mat-card-header>
+        <div mat-card-avatar id="img"></div>
+        <mat-card-title>{{e.nome}}</mat-card-title>
+        <mat-card-subtitle>{{e.alocacao.org.nome}}</mat-card-subtitle>
+        <button class="edit-btn" (click)="openEditDialog(e)">
+          <mat-icon class="edit-icon">delete_outline</mat-icon>
+        </button>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="justify-icons">
+        <mat-icon class="me-1">date_range</mat-icon> {{ e.data }}
+      </div>
+      <div class="justify-icons">
+        <mat-icon class="me-1">group</mat-icon> {{ e.alocacao.local.capacidade }}
+      </div>
+      <div class="justify-icons">
+        <mat-icon class="me-1">location_on</mat-icon> {{ e.endereco }}
+      </div>
+    </mat-card-content>
+  </mat-card>
+  }  @empty {
+    <div class="d-flex justify-content-center">
+      <p>Você não tem espaços cadastrados.</p>
+    </div>
+    }

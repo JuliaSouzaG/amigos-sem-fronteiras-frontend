@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
+import { CadEventoComponent } from './cad-evento/cad-evento.component';
+import { MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-eventos',
@@ -13,6 +15,16 @@ import { CommonModule } from '@angular/common';
 })
 
 export class EventosComponent {
+  
+  constructor(public dialog: MatDialog) {}
+
+  openCadDialog(e: any) {
+    this.dialog.open(CadEventoComponent, {
+      data: {e: e},
+      width: '600px',
+      disableClose: true
+    });
+  }
 
   eventos = [
     {

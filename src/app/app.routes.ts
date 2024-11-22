@@ -10,11 +10,14 @@ import { MeusEventosComponent } from './components/usuario/meus-eventos/meus-eve
 import { MeuPerfilComponent } from './components/usuario/meu-perfil/meu-perfil.component';
 import { QuemSomosComponent } from './components/quem-somos/quem-somos.component';
 import { LoginComponent } from './components/login/login.component';
+import { EspacosComponent } from './components/usuario/espacos/espacos.component';
+import { CadastroComponent } from './components/cadastro/cadastro.component';
 
 export const routes: Routes = [
   { path: 'cadastro-pessoa', component: CadastroPessoaComponent },
   { path: 'escolha-usuario', component: EscolhaUsuarioComponent },
   { path: 'cadastro-instituicao', component: CadastroInstituicaoComponent },
+  { path: 'cadastre-se', component: CadastroComponent },
   { path: 'conta', component: ContaComponent,
     children: [
       { path: 'meu-perfil', component: MeuPerfilComponent },
@@ -23,6 +26,7 @@ export const routes: Routes = [
     ]
    },
   { path: 'eventos', component: EventosComponent },
+  { path: 'espacos', component: EspacosComponent },
   { path: 'quem-somos', component: QuemSomosComponent },
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },

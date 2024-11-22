@@ -1,0 +1,50 @@
+<mat-dialog-content>
+  <div class="position-relative">
+    <button mat-button mat-dialog-close class="position-absolute top-0 end-0" aria-label="Fechar" hidden>X</button>
+  </div>
+  <mat-stepper [linear]="!isLinear" #stepper>
+    <mat-step [stepControl]="alocacao">
+      <form [formGroup]="alocacao">
+        <ng-template matStepLabel>Escolha o dia</ng-template>
+        <mat-form-field  class="example-full-width mb-2">
+            <mat-label>Escolha uma data</mat-label>
+            <input matInput [matDatepickerFilter]="myFilter" [matDatepicker]="picker"  formControlName="data" required>
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperNext>Próximo</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="evento" label="Crie seu evento">
+      <form [formGroup]="evento" class="row">
+        <mat-form-field class="col-12 mb-2">
+            <mat-label>Nome</mat-label>
+            <input matInput formControlName="nome" placeholder="Nome Completo" required>
+        </mat-form-field>
+        <mat-form-field class="col-12">
+            <mat-label>Descrição</mat-label>
+            <textarea matInput formControlName="descricao" placeholder="Descrição do evento" required></textarea>
+        </mat-form-field>
+        <!-- <mat-form-field class="col-12 mb-2">
+          <mat-label>Capa</mat-label>
+          <input matInput formControlName="capa" placeholder="Capa do evento" required>
+        </mat-form-field> -->
+        <div>
+          <button mat-button matStepperPrevious>Voltar</button>
+          <button mat-button matStepperNext>Criar</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Pronto</ng-template>
+      <p>Tudo pronto! Seu evento foi cadastrado!</p>
+      <div>
+        <button mat-button matStepperPrevious>Voltar</button>
+        <button mat-button (click)="stepper.reset()">Criar</button>
+      </div>
+    </mat-step>
+  </mat-stepper>
+</mat-dialog-content>  

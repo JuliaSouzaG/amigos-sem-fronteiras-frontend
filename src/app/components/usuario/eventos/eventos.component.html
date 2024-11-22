@@ -1,13 +1,10 @@
-<div class="d-flex justify-content-center align-items-center box">
+<div class="d-flex flex-column">
 
-  <div class="tudao">
-
-    <div class="m-4">
-      <input type="search" class="form-control w-100" placeholder="Buscar">
-    </div>
+  <div class="mt-4 mb-4">
+    <input type="search" class="form-control float-end" placeholder="Buscar" style="width: 400px;">
+  </div>
 
     <div class="cards flex-wrap">
-
       @for(e of eventos; track e.nome) {
 
       <mat-card appearance="outlined" class="m-2 card">
@@ -25,7 +22,7 @@
           </div>
           <hr>
           <div class="d-flex align-items-center justify-content-center">
-            <button mat-raised-button class="col-12">Inscreva-se</button>
+            <button mat-raised-button class="col-12" (click)="openCadDialog(e)">Inscreva-se</button>
           </div>
         </mat-card-content>
       </mat-card>
@@ -33,7 +30,4 @@
       }
 
     </div>
-
-  </div>
-
 </div>

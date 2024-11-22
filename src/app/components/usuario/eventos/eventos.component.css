@@ -12,7 +12,6 @@ mat-card {
 
 .card:hover{
   border-color: darksalmon;
-  cursor: pointer;
   transform: scale(1.02);
   transition-duration: 0.4s;
 }
@@ -32,5 +31,6 @@ h3 {
 }
 
 .tudao {
-  width: 80%;
+  display: flex;
+  justify-content: end;
 }

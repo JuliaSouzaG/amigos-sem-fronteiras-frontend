@@ -1,0 +1,43 @@
+<mat-dialog-content>
+    <div class="position-relative">
+      <button mat-button mat-dialog-close class="position-absolute top-0 end-0" aria-label="Fechar" hidden>X</button>
+    </div>
+    <mat-stepper [linear]="!isLinear" #stepper>
+      <mat-step editable="false">
+        <form [formGroup]="evento">
+          <ng-template matStepLabel>Confirmação</ng-template>
+            <h2>Deseja se Inscrever no evento {{data.e.nome}}?</h2>
+            Data: {{data.e.data}} <br>
+            Local: {{data.e.endereco}}
+          <div class="mt-3">
+            <button mat-button mat-dialog-close>Não</button>
+            <button mat-button matStepperNext>Sim</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="participacao" label="Tipo de Participação" editable="false">
+        <form [formGroup]="participacao" class="row">
+          Informe o tipo da sua inscrição. Escolha voluntário ou Beneficiário
+          <h4>Sou:</h4>
+          <mat-form-field>
+            <mat-label>Escolha uma opção</mat-label>
+            <mat-select formControlName="tipoParticipacao" required>
+              <mat-option value="option1">Voluntário</mat-option>
+              <mat-option value="option3">Beneficiário</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <div>
+            <button mat-button mat-dialog-close="">Cancelar</button>
+            <button mat-button matStepperNext>Me inscrever</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step editable="false">
+        <ng-template matStepLabel>Pronto!</ng-template>
+        <p>Tudo pronto! Sua inscrição foi realizada com sucesso!</p>
+        <div>
+          <button mat-button mat-dialog-close>Sair</button>
+        </div>
+      </mat-step>
+    </mat-stepper>
+  </mat-dialog-content>  

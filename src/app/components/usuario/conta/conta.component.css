@@ -6,17 +6,17 @@
 }
 
 .sidebar {
-    border: solid 1px rgb(135, 135, 135);
-    border-radius: 3px;
-    background-color: white;
     padding: 15px;
-    height: 500px;
+    border: solid 1px rgb(234, 234, 234);
+    border-radius: 5px;
+    background-color: white;
     width: 250px;
+    height: 185px;
 }
 
 .info {
-    border: solid 1px rgb(135, 135, 135);
-    border-radius: 3px;
+    border: solid 1px rgb(234, 234, 234);
+    border-radius: 5px;
     background-color: white;
     padding: 15px;
     height: 500px;
@@ -29,4 +29,27 @@ a {
     justify-content: start;
     width: 100%;
     text-decoration: none;
+    color: black;
+}
+
+.botao {
+    height: 50px;
+    padding: 10px;
+    border-bottom: solid 1px rgb(234, 234, 234);
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.botao:hover{
+    background-color: rgb(236, 236, 236);
+}
+
+.active {
+    /* background-color: rgb(242, 242, 242); */
+    color: blueviolet;
+}
+
+#botton-btn {
+    border-bottom: none;
 }

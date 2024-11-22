@@ -1,0 +1,181 @@
+<div class="box1">
+    <mat-tab-group dynamicHeight>
+        <mat-tab label="Pessoa Física">        
+            <!-- <a routerLink="/escolha-usuario" class="mb-3 voltar">
+                    <i class="bi bi-arrow-left"></i>
+                    <span>VOLTAR</span>
+                  </a>
+            -->
+            <form [formGroup]="formPessoa" (ngSubmit)="onSubmitPessoa()" class="box row mt-3">
+              
+                    <span class="mb-3">Todos os campos são obrigatórios. O botão de envio será habilitado quando todos os campos forem preenchidos corretamente.</span>
+              
+                    <div class="col-12">
+                      <div class="form-group mb-3 col-12">
+                        <input
+                          type="text"
+                          id="nome"
+                          placeholder="Nome"
+                          autocomplete="off"
+                          formControlName="nome"
+                        />
+                        <label for="nome">Nome</label>
+                      </div>
+                    </div>
+              
+                    <div class="col-12">
+                      <div class="form-group mb-3">
+                        <input
+                          type="email"
+                          id="email"
+                          placeholder="E-mail"
+                          autocomplete="off"
+                          formControlName="email"
+                        />
+                        <label for="email">E-mail</label>
+                      <div *ngIf="formPessoa.get('email')?.errors?.['email']" class="error-msg">Insira um e-mail válido.</div>
+                    </div>
+                    </div>
+              
+                    <div class="col-6">
+                      <div class="form-group mb-3">
+                        <input
+                          type="tel"
+                          id="celular"
+                          placeholder="Celular"
+                          autocomplete="off"
+                          formControlName="celular"
+                          [mask]="'(00) 00000-0000'"
+                        />
+                        <label for="celular">Celular</label>
+                      </div>
+                    </div>
+              
+                    <div class="col-6">
+                      <div class="form-group mb-3">
+                        <input
+                          type="tel"
+                          id="telefone"
+                          placeholder="Telefone"
+                          autocomplete="off"
+                          formControlName="telefone"
+                        />
+                        <label for="telefone">Telefone</label>
+                      </div>
+                    </div>
+              
+                    <div class="col-6">
+                      <div class="form-group mb-3">
+                        <input
+                          type="text"
+                          id="cpf"
+                          placeholder="CPF"
+                          autocomplete="off"
+                          formControlName="cpf"
+                          [mask]="'000.000.000.00'"
+                        />
+                        <label for="cpf">CPF</label>
+                      </div>
+                    </div>
+              
+                    <div class="col-6">
+                      <div class="form-group mb-3">
+                        <input
+                          type="date"
+                          id="dt_nascimento"
+                          placeholder="Data de nascimento"
+                          autocomplete="off"
+                          formControlName="dt_nascimento"
+                        />
+                        <label for="dt_nascimento">Data de nascimento</label>
+                      </div>
+                    </div>
+              
+                    <div class="col-12">
+                      <div class="form-group mb-3">
+                        <select id="genero" placeholder="genero" formControlName="genero">
+                          <option disabled selected>Selecione uma opção</option>
+                          <option value="Feminino">Feminino</option>
+                          <option value="Masculio">Masculio</option>
+                          <option value="Prefiro não informar">Prefiro não informar</option>
+                        </select>
+                        <label for="genero">Gênero</label>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <button class="btn btn-salmon w-100" type="submit" [disabled]="!formPessoa.valid">Cadastrar</button>
+                    </div>
+            </form>
+              
+        </mat-tab>
+        <mat-tab label="Instituição">
+
+                <!-- <a routerLink="/escolha-usuario" class="mb-3 voltar">
+                  <i class="bi bi-arrow-left"></i>
+                  <span>VOLTAR</span>
+                </a>
+             -->
+                <form [formGroup]="formInstituicao" (ngSubmit)="onSubmitInstituicao()" class="box row mt-3">
+            
+                  <span class="mb-3">Todos os campos são obrigatórios. O botão de envio será habilitado quando todos os campos forem preenchidos corretamente.</span>
+            
+                  <div class="col-12">
+                    <div class="form-group mb-3 col-12">
+                      <input 
+                        type="text" 
+                        id="nome" 
+                        placeholder="Nome" 
+                        autocomplete="off"
+                        formControlName="nome"
+                      />
+                      <label for="nome">Nome</label>
+                    </div>
+                  </div>
+            
+                  <div class="col-12">
+                    <div class="form-group mb-3">
+                      <input 
+                        type="email" 
+                        id="email" 
+                        placeholder="E-mail" 
+                        autocomplete="off"
+                        formControlName="email"
+                      />
+                      <label for="email">E-mail</label>
+                    <div *ngIf="formInstituicao.get('email')?.errors?.['email']" class="error-msg">Insira um e-mail válido.</div>
+                  </div>
+                  </div>
+            
+                  <div class="col-6">
+                    <div class="form-group mb-3">
+                      <input 
+                        type="tel" 
+                        id="telefone" 
+                        placeholder="Telefone" 
+                        autocomplete="off"
+                        formControlName="telefone"
+                      />
+                      <label for="telefone">Telefone</label>
+                    </div>
+                  </div>
+          
+                  <div class="col-6">
+                    <div class="form-group mb-3">
+                      <input 
+                        type="" 
+                        id="observacao" 
+                        placeholder="Observação" 
+                        autocomplete="off"
+                        formControlName="observacao"
+                      />
+                      <label for="observacao">Observação</label>
+                    </div>
+                  </div>
+          
+                  <div class="col-12">
+                    <button class="btn btn-salmon w-100" type="submit" [disabled]="!formInstituicao.valid">Cadastrar</button>
+                  </div>
+                </form>
+        </mat-tab>
+    </mat-tab-group>
+</div>
