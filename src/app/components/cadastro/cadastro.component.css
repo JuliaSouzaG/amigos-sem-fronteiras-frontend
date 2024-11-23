@@ -4,12 +4,12 @@
   }
 
   .box1 {
-    height: 100%;
     display: flex;
     justify-content: center;
     align-items: top;
     margin-top: 30px;
   }
+  
 .mat-mdc-tab-body-content {
     overflow: hidden;
   }

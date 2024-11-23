@@ -92,7 +92,7 @@
                     </div>
               
                     <div class="col-12">
-                      <div class="form-group mb-3">
+                      <div class="form-group mb-2">
                         <select id="genero" placeholder="genero" formControlName="genero">
                           <option disabled selected>Selecione uma opção</option>
                           <option value="Feminino">Feminino</option>
@@ -102,6 +102,11 @@
                         <label for="genero">Gênero</label>
                       </div>
                     </div>
+
+                    <section class="mb-3">
+                      <mat-checkbox class="example-margin" formControlName="termoDeUso">Li e estou de acordo com os <a href="../../../assets/docs/Termo de Uso.pdf">Termos de Uso</a> e <a href="../../../assets/docs/Termo de Uso.pdf">Políticas de Privacidade</a>.</mat-checkbox>
+                    </section>
+
                     <div class="col-12">
                       <button class="btn btn-salmon w-100" type="submit" [disabled]="!formPessoa.valid">Cadastrar</button>
                     </div>
@@ -160,7 +165,7 @@
                   </div>
           
                   <div class="col-6">
-                    <div class="form-group mb-3">
+                    <div class="form-group mb-2">
                       <input 
                         type="" 
                         id="observacao" 
@@ -171,6 +176,17 @@
                       <label for="observacao">Observação</label>
                     </div>
                   </div>
+
+                  <section class="mb-3">
+                    <mat-checkbox class="example-margin">Li e estou de acordo com os <a href="../../../assets/docs/Termo de Uso.pdf">Termos de Uso</a> e <a href="../../../assets/docs/Termo de Uso.pdf">Políticas de Privacidade</a>.</mat-checkbox>
+                  </section>
+
+                  <!-- <div class="form-check" style="width: 100px;">
+                    <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                      Default checkbox
+                    </label>
+                  </div> -->
           
                   <div class="col-12">
                     <button class="btn btn-salmon w-100" type="submit" [disabled]="!formInstituicao.valid">Cadastrar</button>
